@@ -1,0 +1,6 @@
+@App.FieldPermission_HostAddress = http://localhost:5234
+
+GET {{App.FieldPermission_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
