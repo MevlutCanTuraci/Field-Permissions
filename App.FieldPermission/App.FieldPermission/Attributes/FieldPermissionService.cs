@@ -18,14 +18,6 @@ public class FieldPermissionService
 
     public async Task<bool> CanViewFieldAsync(int userId, int roleId, string entityName, string fieldName)
     {
-        /*
-        bool? fieldPermission = await _dbContext.FieldPermissions.AsNoTracking()
-          .Where(rp => rp.EntityName == entityName && rp.FieldName == fieldName
-                       && (rp.RolId == roleId || rp.KullaniciId == userId))
-          .Select(rp => rp.GorunurlukDurumu) // True veya False
-          .FirstOrDefaultAsync(_ct.GetCancellationToken());
-        */
-
         var fieldPermission = await _helper.ActionLinqAsync<bool, EfFieldPermissions>( 
         async (_, repo) =>
         {
